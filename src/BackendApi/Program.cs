@@ -14,14 +14,10 @@ namespace BackendApi
         public static async Task Main(string[] args)
         {
 
-            await Task.Delay(10000);
-
             var builder = WebApplication.CreateBuilder(args);
             //Console.WriteLine(builder.Configuration["ConnectionString"]);
             builder.Services.AddDbContext<VitalityMasteryTestContext>(
                 options => options.UseSqlServer(builder.Configuration["ConnectionStrings"]));
-
-
 
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
@@ -86,7 +82,7 @@ namespace BackendApi
                 var service = scope.ServiceProvider;
 
                 var context = service.GetRequiredService<VitalityMasteryTestContext>();
-                await context.Database.MigrateAsync();
+                context.Database.Migrate();
             }
 
             // Configure the HTTP request pipeline.
