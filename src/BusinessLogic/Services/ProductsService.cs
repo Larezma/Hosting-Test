@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Domain.Interfaces.Service;
+using Domain.Interfaces.Wrapper;
 using Domain.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Interfaces.Service;
-using Domain.Interfaces.Wrapper;
 
 namespace BusinessLogic.Services
 {
@@ -45,8 +45,8 @@ namespace BusinessLogic.Services
                 throw new ArgumentNullException(nameof(model));
             }
 
-            if (string.IsNullOrEmpty(model.Product1) || !decimal.TryParse(model.Calories.ToString(), out _) || !decimal.TryParse(model.ProteinPer.ToString(), out _) 
-                || !decimal.TryParse(model.FatPer.ToString(), out _) || !decimal.TryParse(model.CarbsPer.ToString(), out _) || string.IsNullOrEmpty(model.VitaminsAndMinerals) 
+            if (string.IsNullOrEmpty(model.Product1) || !decimal.TryParse(model.Calories.ToString(), out _) || !decimal.TryParse(model.ProteinPer.ToString(), out _)
+                || !decimal.TryParse(model.FatPer.ToString(), out _) || !decimal.TryParse(model.CarbsPer.ToString(), out _) || string.IsNullOrEmpty(model.VitaminsAndMinerals)
                 || string.IsNullOrEmpty(model.NutritionalValue))
             {
                 throw new ArgumentNullException("Одно из ключевых полей введенны неправильно !");

@@ -1,8 +1,8 @@
 ﻿using BackendApi.Contract.Training;
 using BackendApi.Contract.Users;
 using BusinessLogic.Services;
-using Domain.Models;
 using Domain.Interfaces.Service;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendApi.ControllersDomain

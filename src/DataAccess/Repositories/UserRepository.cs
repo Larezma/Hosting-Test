@@ -10,7 +10,7 @@ namespace DataAccess.Repositories
 {
     internal class UserRepository : RepositoryBase<User>, IUserRepository
     {
-        public UserRepository(VitalityMasteryTestContext masteryContext) :base(masteryContext) 
+        public UserRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {
         }
     }

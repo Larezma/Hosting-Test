@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    internal class AchievementsRepository: RepositoryBase<Achievement> , IAchievementsRepository
+    internal class AchievementsRepository : RepositoryBase<Achievement>, IAchievementsRepository
     {
         public AchievementsRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {

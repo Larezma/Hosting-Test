@@ -1,12 +1,12 @@
-﻿using Domain.Models;
-using DataAccess.Repositories;
+﻿using DataAccess.Repositories;
+using Domain.Interfaces.Repository;
+using Domain.Interfaces.Wrapper;
+using Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Domain.Interfaces.Repository;
-using Domain.Interfaces.Wrapper;
 
 namespace DataAccess.Wrapper
 {
@@ -308,7 +308,7 @@ namespace DataAccess.Wrapper
 
         public async Task Save()
         {
-           await  _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
     }
 }

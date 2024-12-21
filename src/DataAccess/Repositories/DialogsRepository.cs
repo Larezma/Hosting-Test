@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    internal class DialogsRepository: RepositoryBase<Dialog> , IDialogsRepository
+    internal class DialogsRepository : RepositoryBase<Dialog>, IDialogsRepository
     {
         public DialogsRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {

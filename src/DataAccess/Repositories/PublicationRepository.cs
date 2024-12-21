@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    internal class PublicationRepository : RepositoryBase<Publication> , IPublicationRepository
+    internal class PublicationRepository : RepositoryBase<Publication>, IPublicationRepository
     {
         public PublicationRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {

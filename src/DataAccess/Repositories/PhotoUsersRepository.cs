@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    internal class PhotoUsersRepository : RepositoryBase<PhotoUser> , IPhotoUsersRepository
+    internal class PhotoUsersRepository : RepositoryBase<PhotoUser>, IPhotoUsersRepository
     {
         public PhotoUsersRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {

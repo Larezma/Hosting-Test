@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    internal class ScheduleRepository : RepositoryBase<Schedule> , IScheduleRepository
+    internal class ScheduleRepository : RepositoryBase<Schedule>, IScheduleRepository
     {
         public ScheduleRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {

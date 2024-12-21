@@ -10,7 +10,7 @@
 
         public string MessageContent { get; set; } = null!;
 
-        public DateTime? DateMessage { get; set; } 
+        public DateTime? DateMessage { get; set; }
 
         public DateTime? DateUpMessage { get; set; }
 

@@ -1,8 +1,8 @@
 ﻿using BackendApi.Contract.Comments;
 using BackendApi.Contract.Dialogs;
 using BusinessLogic.Services;
-using Domain.Models;
 using Domain.Interfaces.Service;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BackendApi.ControllersDomain

@@ -1,8 +1,8 @@
 ﻿using BackendApi.Contract.MessageUsers;
 using BackendApi.Contract.Users;
 using BusinessLogic.Services;
-using Domain.Models;
 using Domain.Interfaces.Service;
+using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Net;
 

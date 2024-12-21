@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    internal class CommentsRepository : RepositoryBase<Comment> , ICommentsRepository
+    internal class CommentsRepository : RepositoryBase<Comment>, ICommentsRepository
     {
         public CommentsRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {
