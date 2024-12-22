@@ -91,15 +91,24 @@ namespace BackendApi
                 app.UseSwaggerUI();
             }
 
-            app.UseCors(builder => builder.WithOrigins(new[] { "https://hosting-test-z3z2.onrender.com/users", } )
-                            .AllowAnyHeader()
-                            .AllowAnyMethod());
+            builder.Services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(
+                policy =>
+                {
+                    policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+                });
+            });
+
+            app.UseCors();
+            //app.UseCors(builder => builder.WithOrigins(new[] { "https://hosting-test-z3z2.onrender.com/users", } )
+            //                .AllowAnyHeader()
+            //                .AllowAnyMethod());
 
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
-            app.UseCors("MyPolicy");
 
             app.MapControllers();
 
