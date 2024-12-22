@@ -13,9 +13,9 @@ namespace BackendApi
     {
         public static async Task Main(string[] args)
         {
+            await Task.Delay(10000);
 
             var builder = WebApplication.CreateBuilder(args);
-            //Console.WriteLine(builder.Configuration["ConnectionString"]);
             builder.Services.AddDbContext<VitalityMasteryTestContext>(
                 options => options.UseSqlServer(builder.Configuration["ConnectionStrings"]));
 
@@ -82,15 +82,18 @@ namespace BackendApi
                 var service = scope.ServiceProvider;
 
                 var context = service.GetRequiredService<VitalityMasteryTestContext>();
-                context.Database.Migrate();
+                await context.Database.MigrateAsync();
             }
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            app.UseCors(builder => builder.WithOrigins(new[] { "https://localhost:7033", } )
+                            .AllowAnyHeader()
+                            .AllowAnyMethod());
 
             app.UseHttpsRedirection();
 
