@@ -1,8 +1,8 @@
 using BusinessLogic.Services;
+using Domain.Models;
 using DataAccess.Wrapper;
 using Domain.Interfaces.Service;
 using Domain.Interfaces.Wrapper;
-using Domain.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
@@ -14,10 +14,12 @@ namespace BackendApi
         public static async Task Main(string[] args)
         {
             await Task.Delay(10000);
-
+            
             var builder = WebApplication.CreateBuilder(args);
+            //Console.WriteLine(builder.Configuration["ConnectionString"]);
             builder.Services.AddDbContext<VitalityMasteryTestContext>(
                 options => options.UseSqlServer(builder.Configuration["ConnectionStrings"]));
+
 
             builder.Services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
             builder.Services.AddScoped<IUserService, UserService>();
@@ -91,24 +93,11 @@ namespace BackendApi
                 app.UseSwaggerUI();
             }
 
-            builder.Services.AddCors(options =>
-            {
-                options.AddDefaultPolicy(
-                policy =>
-                {
-                    policy.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
-                });
-            });
-
-            app.UseCors();
-            //app.UseCors(builder => builder.WithOrigins(new[] { "https://hosting-test-z3z2.onrender.com/users", } )
-            //                .AllowAnyHeader()
-            //                .AllowAnyMethod());
-
             app.UseHttpsRedirection();
 
             app.UseAuthorization();
 
+            app.UseCors("MyPolicy");
 
             app.MapControllers();
 

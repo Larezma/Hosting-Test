@@ -1,9 +1,9 @@
-﻿using Domain.Models;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Text.RegularExpressions;
+using Microsoft.EntityFrameworkCore;
+using Domain.Models;
 
 namespace Domain.Models;
 

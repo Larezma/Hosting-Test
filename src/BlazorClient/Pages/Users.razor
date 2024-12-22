@@ -79,7 +79,7 @@
         CurrentTime = date.ToShortTimeString();
 
         var client = new HttpClient();
-        client.BaseAddress = new Uri("https://my-best-api-lol.onrender.com/");
+        client.BaseAddress = new Uri("https://localhost:7034/");
 
         result = await client.GetFromJsonAsync<User[]>("api/UserControllerAcess");
 

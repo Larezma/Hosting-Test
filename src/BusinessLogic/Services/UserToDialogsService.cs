@@ -1,11 +1,11 @@
-﻿using Domain.Interfaces.Service;
-using Domain.Interfaces.Wrapper;
+﻿using System;
 using Domain.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Domain.Interfaces.Service;
+using Domain.Interfaces.Wrapper;
 
 namespace BusinessLogic.Services
 {
@@ -45,7 +45,7 @@ namespace BusinessLogic.Services
                 throw new ArgumentNullException(nameof(model));
             }
 
-            if (!int.TryParse(model.DialogId.ToString(), out _) || !int.TryParse(model.UserId.ToString(), out _) || int.IsNegative(model.Id) || int.IsNegative(model.DialogId) || int.IsNegative(model.UserId) || model.DialogId <= 0 || model.UserId <= 0)
+            if (!int.TryParse(model.DialogId.ToString(), out _) || !int.TryParse(model.UserId.ToString(), out _) ||  int.IsNegative(model.Id) || int.IsNegative(model.DialogId) || int.IsNegative(model.UserId) || model.DialogId <= 0 || model.UserId <= 0)
             {
                 throw new ArgumentNullException("Одно из ключевых полей введенны неправильно !");
             }

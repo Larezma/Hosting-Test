@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    internal class MessageUsersRepository : RepositoryBase<MessageUser>, IMessageUsersRepository
+    internal class MessageUsersRepository : RepositoryBase<MessageUser> , IMessageUsersRepository
     {
         public MessageUsersRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {

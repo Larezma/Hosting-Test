@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    internal class UserToRuleRepository : RepositoryBase<UserToRule>, IUserToRuleRepository
+    internal class UserToRuleRepository: RepositoryBase<UserToRule> , IUserToRuleRepository
     {
         public UserToRuleRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {

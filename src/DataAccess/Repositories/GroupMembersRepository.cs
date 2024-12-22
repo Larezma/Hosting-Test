@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repositories
 {
-    internal class GroupMembersRepository : RepositoryBase<GroupMember>, IGroupMembersRepository
+    internal class GroupMembersRepository: RepositoryBase<GroupMember> , IGroupMembersRepository
     {
         public GroupMembersRepository(VitalityMasteryTestContext masteryContext) : base(masteryContext)
         {

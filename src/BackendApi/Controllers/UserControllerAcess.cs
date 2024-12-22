@@ -2,10 +2,10 @@
 using BackendApi.Contract.Friend;
 using BackendApi.Contract.Users;
 using BusinessLogic.Services;
+using Domain.Models;
 using DataAccess.Repositories;
 using Domain.Interfaces.Repository;
 using Domain.Interfaces.Service;
-using Domain.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
