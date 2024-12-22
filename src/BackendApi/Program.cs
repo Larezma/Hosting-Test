@@ -91,7 +91,7 @@ namespace BackendApi
                 app.UseSwaggerUI();
             }
 
-            app.UseCors(builder => builder.WithOrigins(new[] { "https://localhost:7033", } )
+            app.UseCors(builder => builder.WithOrigins(new[] { "https://hosting-test-z3z2.onrender.com/users", } )
                             .AllowAnyHeader()
                             .AllowAnyMethod());
 
